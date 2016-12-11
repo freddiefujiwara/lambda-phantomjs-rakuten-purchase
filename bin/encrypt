@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var CryptoJS = require("crypto-js");
+if( 3 > process.argv.length){
+    console.log('Usage : ' + process.argv[0] + ' [plain text] ');
+    process.exit();
+}
+
+console.log(CryptoJS.AES.encrypt(process.argv[2], process.env.password_key).toString());
