@@ -1,4 +1,5 @@
-var env = {};
+var system = require('system');
+var env = system.env;
 var steps=[];
 var stepIndex = 0;
 var loadInProgress = false;//This is set to true when a page is still loading
@@ -11,9 +12,6 @@ page.settings.javascriptEnabled = true;
 page.settings.loadImages = false;//Script is much faster with this field set to false
 phantom.cookiesEnabled = true;
 phantom.javascriptEnabled = true;
-env.username = "";
-env.password = "";
-env.product_url ="http://product.rakuten.co.jp/product/-/9810409b2cdcbafe78d4d6ff3d82b8ba/";
 /*********CONFIGURATION*****************/
 
 console.log('All settings loaded, start with execution');
@@ -87,9 +85,10 @@ steps = [
         console.log('Step 11 - Purchase');
         page.evaluate(function(env){
             document.getElementById("ml_clr").click();
-            //            document.getElementById("purchase-button-bottom").click();
+            document.getElementById("purchase-button-bottom").click();
         },env);
     },
+    /*
     function(env){
         var fs = require('fs');
         var result = page.evaluate(function(env) {
@@ -97,6 +96,7 @@ steps = [
         },env);
         fs.write('RakutenIchibaLoggedIn.html',result,'w');
     },
+   */
 ];
 
 //Execute steps one by one
@@ -110,14 +110,14 @@ interval = setInterval(function(){
         console.log("test complete!");
         phantom.exit();
     }
-},200);
+},1000);
 page.onLoadStarted = function() {
     loadInProgress = true;
-    console.log('Loading started');
+    //    console.log('Loading started');
 };
 page.onLoadFinished = function() {
     loadInProgress = false;
-    console.log('Loading finished');
+    //    console.log('Loading finished');
 };
 page.onConsoleMessage = function(msg) {
     console.log(msg);
