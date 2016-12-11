@@ -64,9 +64,9 @@ var steps = [
         console.log('Step ' + env.stepIndex + ': purchase');
         page.evaluate(function(env){
             document.getElementById("ml_clr").click(); // deselect all checkboxes
-            //document.getElementById("purchase-button-bottom").click();
+            document.getElementById("purchase-button-bottom").click();
         },env);
-        page.open(RAKUTEN_ICHIBA_TOP, function(status){console.log(status);},env);
+        //page.open(RAKUTEN_ICHIBA_TOP, function(status){console.log(status);},env);
     },
 ];
 
