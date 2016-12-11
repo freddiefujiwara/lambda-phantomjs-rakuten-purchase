@@ -1,0 +1,22 @@
+{
+  "name": "lambda-phantomjs-rakuten-purchase-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddiefujiwara/lambda-phantomjs-rakuten-purchase-.git"
+  },
+  "author": "Fumikazu Fujiwara <npm@ze.gs> (http://freddiefujiwara.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freddiefujiwara/lambda-phantomjs-rakuten-purchase-/issues"
+  },
+  "homepage": "https://github.com/freddiefujiwara/lambda-phantomjs-rakuten-purchase-#readme",
+  "dependencies": {
+    "phantomjs-lambda-pack": "0.0.7"
+  }
+}
